@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.utils.translation import gettext as _
 from django.template.defaultfilters import slugify
 
+
 class Category(models.Model):
 	title = models.CharField(max_length=50)
 	slug = models.SlugField(max_length=50)
@@ -23,7 +24,7 @@ class Category(models.Model):
 class Post(models.Model):
 	title = models.CharField(max_length=50)
 	slug = models.CharField(max_length=50)
-	excerpt = models.TextField(max_length=140)
+	excerpt = models.CharField(max_length=140)
 	content = models.TextField()
 	created_date = models.DateTimeField(auto_now_add=True)
 	updated_date = models.DateTimeField(auto_now=True)
