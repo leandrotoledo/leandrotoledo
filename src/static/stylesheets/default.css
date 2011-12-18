@@ -21,13 +21,13 @@ body {
 #header .row {
 	margin: 0;
 }
-#header blockquote {
+#header .row blockquote {
 	border: 0;
 	margin-top: 10px;
 	padding: 10px 0 0 0;
 	text-align: right;
 }
-#header blockquote p {
+#header .row blockquote p {
 	font-size: 15px;
 	margin: 0;
 }
@@ -44,54 +44,61 @@ body {
 	background: #000;
 	border: 0;
 	color: #FFF;
+	padding: 0 10px;
 	font-size: 15px;
 	font-weight: bold;
 }
+
 #main {
 	margin: 0;
 }
 #main #articles {
-	padding: 0 30px;
+	padding: 0 15px;
 }
-#main #articles article h2 a {
+#main #articles h2 a {
+	color: #333;
+}
+#main #articles a {
+	color: #06C;
 	text-decoration: none;
 }
-#main #articles article header ul .published-date, .comments a {
-	color: #888;
+#main #articles a:hover {
+	color: #09F;
+}
+#main #articles article ul {
+	margin: 0;
+}
+#main #articles article .published-date, .more-link a, .comments a, .keywords {
+	padding-left: 20px;
 	font-size: 13px;
+	color: #888;
 }
 #main #articles article header ul .published-date {
 	background: url('http://www.leandrotoledo.blog.br/static/images/icons.gif') no-repeat left -40px;
-	padding-left: 20px;
-	float: left;
-}
-#main #articles article header ul .comments {
-	background: url('http://www.leandrotoledo.blog.br/static/images/icons.gif') no-repeat left -100px;
-	padding-left: 20px;
-	float: right;
 }
 #main #articles article .content .more-link {
-	color: #06C;
-	background: url('http://www.leandrotoledo.blog.br/static/images/icons.gif') no-repeat left -21px;
 	display: block;
-	margin-top: 10px;
-	padding-left: 20px;
-	font-size: 13px;
+	margin-top: 8px;
+}
+#main #articles article .content .more-link a {
+	background: url('http://www.leandrotoledo.blog.br/static/images/icons.gif') no-repeat left -21px;
 	font-weight: bold;
-	text-decoration: none;
 }
-#main #articles article .content .more-link:hover {
-	color: #09F;
-}
-#main #articles article .content {
-	margin: 0;
-	padding: 0;
-}
-#main #articles article .category .keywords {
-	color: #888;
+#main #articles article footer ul .keywords {
 	background: url('http://www.leandrotoledo.blog.br/static/images/icons.gif') no-repeat -20px -240px;
-	font-size: 13px;
-	padding-left: 20px;
+	float: left;
+}
+#main #articles article footer ul .keywords span ul li {
+	float: left;
+	margin-right: 5px;
+}
+#main #articles article footer ul .keywords span ul li a {
+	text-transform: capitalize;
+}
+#main #articles article footer ul .comments {
+	background: url('http://www.leandrotoledo.blog.br/static/images/icons.gif') no-repeat left -100px;
+	margin-right: 20px;
+	float: right;
 }
 
 #footer {

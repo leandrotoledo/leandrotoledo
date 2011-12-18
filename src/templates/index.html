@@ -6,23 +6,29 @@
 			<header>
 				<h2><a href=""><span itemprop="name">{{ post.title }}</span></a></h2>
 				 <ul>
-					<li class="published-date">Escrito por <span itemprop="author">{{ post.user }}</span> em <time datetime="{{ post.published_date|date:'Y-m-d' }}"><span itemprop="datePublished">{{ post.published_date|date:'d/m/Y' }}</span></time></li>
-					<li class="comments"><a href="/posts/2011/12/13/teste/#comments-section">1 comentário(s)</a></li>
+					<li class="published-date">por <span itemprop="author">{{ post.user }}</span> em <time datetime="{{ post.published_date|date:'Y-m-d' }}"><span itemprop="datePublished">{{ post.published_date|date:'d/m/Y' }}</span></time></li>
 				</ul>
             </header>
-            
-            <br class="clear" />
             
             <div class="content">
 				{{ post.content }}
 				
 				<br class="clear" />
-				<a class="more-link" href="/posts/2011/12/13/teste/">Continue lendo »</a>
+				<span class="more-link"><a href="/posts/2011/12/13/teste/">Continue lendo »</a></span>
             </div>
             
             <footer>
-				<ul class="category">
-					<li class="keywords">Categoria(s): <span itemprop="keywords"><ul><li>teste</li></ul></span></li>
+				<ul>
+					<li class="keywords">Categoria(s): 
+						<span itemprop="keywords">
+							<ul>
+							{% for category in post.category.all %}
+								<li><a href="">{{ category }}</a></li>
+							{% endfor %}
+							</ul>
+						</span>
+					</li>
+					<li class="comments"><a href="/posts/2011/12/13/teste/#comments-section">1 comentário(s)</a></li>
 				</ul>
 			</footer>
 		</article>
