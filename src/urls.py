@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'src.views.home', name='home'),
     # url(r'^src/', include('src.foo.urls')),
 
+	url(r'^$',			include('core.urls')),
 	url(r'^admin/', 	include(admin.site.urls)),
     url(r'^comments/',	include('django.contrib.comments.urls')),
 )

@@ -1,0 +1,5 @@
+{% extends 'base.html' %}
+
+{% for post in object_list %}
+	<li>{{ post.title }}</li>
+{% endfor %}
