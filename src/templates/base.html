@@ -19,7 +19,7 @@
 </head>
 <body>
 	<div class="container">
-		<header class="sixteen columns clearfix">
+		<header id="header" class="sixteen columns clearfix">
 			<h1>Blog do Leandro Toledo</h1>
 			<hr />
 			<div class="row">
@@ -32,7 +32,8 @@
 				</blockquote>
 				<img class="two columns omega" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Linux_Logo_in_Linux_Libertine_Font.svg/511px-Linux_Logo_in_Linux_Libertine_Font.svg.png" />
 			</div>
-			<nav>
+			
+			<nav id="top-menu">
 				<ul class="tabs">
 					<li><a href="">Home</a></li>
 					<li><a href="">Sobre</a></li>
@@ -42,12 +43,25 @@
 			</nav>
 		</header>
 		
-		<div>
-			<article></article>
+		<div id="main" class="sixteen columns clearfix row">
+			<div id="articles" class="twelve columns alpha">
+				{% block articles %}
+				{% endblock %}
+				
+				<hr />
+			</div>
+			
+			<aside id="menu" class="three columns omega sidebar">
+				menu
+			</aside>
 		</div>
 		
-		<footer>
-		</footer>
+		<footer id="footer" class="sixteen columns clearfix">			
+            <div itemscope itemtype="http://n.whatwg.org/work">
+                <a id="creative-commons-license" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width: 0;" src="http://www.leandrotoledo.blog.br/static/images/buttons/creativecommons_by-nc-sa.png"></a>
+                O <a itemprop="work" href="http://leandrotoledo.blog.br/"><span>Blog do Leandro Toledo</span></a> por <a itemprop="author" href="/about/"><span>Leandro Toledo de Souza</span></a> está sob a licença <a itemprop="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><abbr title="Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License"><span>CC-BY-NC-SA</span></abbr></a>.
+            </div>
+        </footer>
 	</div>
 </body>
 </html>

@@ -9,41 +9,107 @@ body {
 	border-radius: 15px;
 }
 
-header h1 {
+#header h1 {
 	text-align: left;
 	padding-top: 10px;
 	margin: 0;
 }
-header hr {
+#header hr {
 	border: 2px solid #000;
 	margin-bottom: 10px;
 }
-header .row {
+#header .row {
 	margin: 0;
 }
-header blockquote {
+#header blockquote {
 	border: 0;
 	margin-top: 10px;
 	padding: 10px 0 0 0;
 	text-align: right;
 }
-header blockquote p {
+#header blockquote p {
 	font-size: 15px;
 	margin: 0;
 }
-header nav {
+#header #top-menu {
 	display: block;
 	width: 100%;
 }
-header nav .tabs {
+#header #top-menu .tabs {
 	background: #000;
-	padding: 10px;
+	padding: 6px;
 	margin-top: 10px;
 }
-header nav .tabs li a {
+#header #top-menu .tabs li a {
 	background: #000;
 	border: 0;
 	color: #FFF;
 	font-size: 15px;
 	font-weight: bold;
+}
+#main {
+	margin: 0;
+}
+#main #articles {
+	padding: 0 30px;
+}
+#main #articles article h2 a {
+	text-decoration: none;
+}
+#main #articles article header ul .published-date, .comments a {
+	color: #888;
+	font-size: 13px;
+}
+#main #articles article header ul .published-date {
+	background: url('http://www.leandrotoledo.blog.br/static/images/icons.gif') no-repeat left -40px;
+	padding-left: 20px;
+	float: left;
+}
+#main #articles article header ul .comments {
+	background: url('http://www.leandrotoledo.blog.br/static/images/icons.gif') no-repeat left -100px;
+	padding-left: 20px;
+	float: right;
+}
+#main #articles article .content .more-link {
+	color: #06C;
+	background: url('http://www.leandrotoledo.blog.br/static/images/icons.gif') no-repeat left -21px;
+	display: block;
+	margin-top: 10px;
+	padding-left: 20px;
+	font-size: 13px;
+	font-weight: bold;
+	text-decoration: none;
+}
+#main #articles article .content .more-link:hover {
+	color: #09F;
+}
+#main #articles article .content {
+	margin: 0;
+	padding: 0;
+}
+#main #articles article .category .keywords {
+	color: #888;
+	background: url('http://www.leandrotoledo.blog.br/static/images/icons.gif') no-repeat -20px -240px;
+	font-size: 13px;
+	padding-left: 20px;
+}
+
+#footer {
+	border-top: 4px solid #000;
+	margin-bottom: 10px;
+}
+#footer div {
+	font-size: 11px;
+	margin-top: 5px;
+}
+#footer div a {
+	color: #06C;
+}
+#footer div a:hover {
+	color: #09F;
+}
+#footer div img {
+	float: left;
+	padding-top: 2px;
+	padding-right: 4px;
 }
