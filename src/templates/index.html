@@ -20,13 +20,13 @@
             <footer>
 				<ul>
 					<li class="keywords">Categoria(s): 
-						<span itemprop="keywords">
+						<div itemprop="keywords">
 							<ul>
 							{% for category in post.category.all %}
 								<li><a href="">{{ category }}</a></li>
 							{% endfor %}
 							</ul>
-						</span>
+						</div>
 					</li>
 					<li class="comments"><a href="/posts/2011/12/13/teste/#comments-section">1 comentário(s)</a></li>
 				</ul>

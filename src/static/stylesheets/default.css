@@ -88,11 +88,11 @@ body {
 	background: url('http://www.leandrotoledo.blog.br/static/images/icons.gif') no-repeat -20px -240px;
 	float: left;
 }
-#main #articles article footer ul .keywords span ul li {
+#main #articles article footer ul .keywords div ul li {
 	float: left;
 	margin-right: 5px;
 }
-#main #articles article footer ul .keywords span ul li a {
+#main #articles article footer ul .keywords div ul li a {
 	text-transform: capitalize;
 }
 #main #articles article footer ul .comments {
