@@ -1,36 +1,49 @@
 {% extends 'base.html' %}
 
+{% load comments %}
+{% load url from future %}
+
 {% block articles %}
-	{% for post in object_list %}
-		<article itemscope itemtype="http://schema.org/BlogPosting">
-			<header>
-				<h2><a href=""><span itemprop="name">{{ post.title }}</span></a></h2>
-				 <ul>
-					<li class="published-date">por <span itemprop="author">{{ post.user }}</span> em <time datetime="{{ post.published_date|date:'Y-m-d' }}"><span itemprop="datePublished">{{ post.published_date|date:'d/m/Y' }}</span></time></li>
-				</ul>
+    {% for post in object_list %}
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+            <header>
+                <h2><a href=""><span itemprop="name">{{ post.title }}</span></a></h2>
+                 <ul>
+                    <li class="published-date">por <span itemprop="author">{{ post.user }}</span> em <time datetime="{{ post.published_date|date:'Y-m-d' }}"><span itemprop="datePublished">{{ post.published_date|date:'d/m/Y' }}</span></time></li>
+                </ul>
             </header>
-            
+
             <div class="content">
-				{{ post.content }}
-				
-				<br class="clear" />
-				<span class="more-link"><a href="/posts/2011/12/13/teste/">Continue lendo »</a></span>
+                {{ post.excerpt|safe|escape }}
+
+                <br class="clear" />
+                <span class="more-link"><a href="{{ post.get_absolute_url }}">Continue lendo »</a></span>
             </div>
-            
+
             <footer>
-				<ul>
-					<li class="keywords">Categoria(s): 
-						<div itemprop="keywords">
-							<ul>
-							{% for category in post.category.all %}
-								<li><a href="">{{ category }}</a></li>
-							{% endfor %}
-							</ul>
-						</div>
-					</li>
-					<li class="comments"><a href="/posts/2011/12/13/teste/#comments-section">1 comentário(s)</a></li>
-				</ul>
-			</footer>
-		</article>
-	{% endfor %}
+                <ul>
+                    <li class="keywords">Categoria(s):
+                        <div itemprop="keywords">
+                            <ul>
+                            {% for category in post.category.all %}
+                                <li><a href="">{{ category }}</a></li>
+                            {% endfor %}
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="comments">
+                        {% get_comment_count for post as comment_count %}
+                        {% if comment_count > 0 %}
+                            <a href="{{ post.get_absolute_url }}#comments-section">{{ get_comment_count }} comentário(s)</a>
+                        {% else %}
+                            <a href="{{ post.get_absolute_url }}#comments-section">Deixe um comentário</a>
+                        {% endif %}
+                    </li>
+                </ul>
+            </footer>
+        </article>
+        <br class="clear" />
+    {% empty %}
+        <h2>Nada encontrado</h2>
+    {% endfor %}
 {% endblock %}

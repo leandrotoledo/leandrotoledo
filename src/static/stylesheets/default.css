@@ -1,122 +1,139 @@
 body {
-	background: #EEE;
+    background: #EEE;
 }
 
 .container {
-	background: #FFF;
-	margin: 10px auto;
-	padding: 5px;
-	border-radius: 15px;
+    background: #FFF;
+    margin: 10px auto;
+    padding: 5px;
+    border-radius: 15px;
 }
 
 #header h1 {
-	text-align: left;
-	padding-top: 10px;
-	margin: 0;
+    text-align: left;
+    padding-top: 10px;
+    margin: 0;
 }
 #header hr {
-	border: 2px solid #000;
-	margin-bottom: 10px;
+    border: 2px solid #000;
+    margin-bottom: 10px;
 }
 #header .row {
-	margin: 0;
+    margin: 0;
 }
 #header .row blockquote {
-	border: 0;
-	margin-top: 10px;
-	padding: 10px 0 0 0;
-	text-align: right;
+    border: 0;
+    margin-top: 10px;
+    padding: 10px 0 0 0;
+    text-align: right;
 }
 #header .row blockquote p {
-	font-size: 15px;
-	margin: 0;
+    font-size: 15px;
+    margin: 0;
 }
 #header #top-menu {
-	display: block;
-	width: 100%;
+    display: block;
+    width: 100%;
 }
 #header #top-menu .tabs {
-	background: #000;
-	padding: 6px;
-	margin-top: 10px;
+    background: #000;
+    padding: 6px;
+    margin-top: 10px;
 }
 #header #top-menu .tabs li a {
-	background: #000;
-	border: 0;
-	color: #FFF;
-	padding: 0 10px;
-	font-size: 15px;
-	font-weight: bold;
+    background: #000;
+    border: 0;
+    color: #FFF;
+    padding: 0 10px;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 #main {
-	margin: 0;
+    margin: 0;
 }
 #main #articles {
-	padding: 0 15px;
+    padding: 0 15px;
 }
 #main #articles h2 a {
-	color: #333;
+    color: #333;
 }
 #main #articles a {
-	color: #06C;
-	text-decoration: none;
+    color: #06C;
+    text-decoration: none;
 }
 #main #articles a:hover {
-	color: #09F;
+    color: #09F;
+}
+#main #articles article {
+    margin-top: 20px;
+    margin-right: 30px;
+}
+#main #articles article:first-child {
+    margin-top: 0px;
 }
 #main #articles article ul {
-	margin: 0;
+    margin: 0;
 }
 #main #articles article .published-date, .more-link a, .comments a, .keywords {
-	padding-left: 20px;
-	font-size: 13px;
-	color: #888;
+    padding-left: 20px;
+    font-size: 13px;
+    color: #888;
+}
+#main #articles article header h2 {
+    font-size: 28px;
 }
 #main #articles article header ul .published-date {
-	background: url('http://www.leandrotoledo.blog.br/static/images/icons.gif') no-repeat left -40px;
+    background: url('http://www.leandrotoledo.blog.br/static/images/icons.gif') no-repeat left -40px;
+}
+#main #articles article .content {
+    display: block;
+    text-align: justify;
 }
 #main #articles article .content .more-link {
-	display: block;
-	margin-top: 8px;
+    display: block;
+    margin-top: 8px;
 }
 #main #articles article .content .more-link a {
-	background: url('http://www.leandrotoledo.blog.br/static/images/icons.gif') no-repeat left -21px;
-	font-weight: bold;
+    background: url('http://www.leandrotoledo.blog.br/static/images/icons.gif') no-repeat left -21px;
+    font-weight: bold;
+}
+#main #articles article footer {
+    float: left;
+    width: 100%;
 }
 #main #articles article footer ul .keywords {
-	background: url('http://www.leandrotoledo.blog.br/static/images/icons.gif') no-repeat -20px -240px;
-	float: left;
+    background: url('http://www.leandrotoledo.blog.br/static/images/icons.gif') no-repeat -20px -240px;
+    float: left;
 }
 #main #articles article footer ul .keywords div ul li {
-	float: left;
-	margin-right: 5px;
+    float: left;
+    margin-right: 5px;
 }
 #main #articles article footer ul .keywords div ul li a {
-	text-transform: capitalize;
+    text-transform: capitalize;
 }
 #main #articles article footer ul .comments {
-	background: url('http://www.leandrotoledo.blog.br/static/images/icons.gif') no-repeat left -100px;
-	margin-right: 20px;
-	float: right;
+    background: url('http://www.leandrotoledo.blog.br/static/images/icons.gif') no-repeat left -100px;
+    float: right;
 }
 
 #footer {
-	border-top: 4px solid #000;
-	margin-bottom: 10px;
+    border-top: 4px solid #000;
+    margin-bottom: 10px;
 }
 #footer div {
-	font-size: 11px;
-	margin-top: 5px;
+    font-size: 11px;
+    margin-top: 5px;
 }
 #footer div a {
-	color: #06C;
+    color: #06C;
 }
 #footer div a:hover {
-	color: #09F;
+    color: #09F;
 }
 #footer div img {
-	float: left;
-	padding-top: 2px;
-	padding-right: 4px;
+    float: left;
+    padding-top: 2px;
+    padding-right: 4px;
 }
