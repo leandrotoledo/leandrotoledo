@@ -139,13 +139,30 @@ body {
     float: right;
     margin-right: 30px;
 }
+#main #menu {
+    border-left: 1px solid #EEE;
+    padding-left: 15px;
+}
 #main #menu nav #archive #archives {
     float: left;
-    margin-top: 4px;
+    margin: 0;
+    padding: 3px 0;
     width: 90px;
+    text-align: center;
 }
 #main #menu nav #archive input {
-    float: right;
+    float: left;
+    margin-left: 4px;
+}
+#main #menu nav #search #query {
+    float: left;
+    margin: 0;
+    padding: 4px;
+    width: 79px;
+}
+#main #menu nav #search input {
+    float: left;
+    margin-left: 4px;
 }
 #footer {
     border-top: 4px solid #000;

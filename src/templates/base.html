@@ -74,14 +74,11 @@
 
             <aside id="menu" class="three columns omega sidebar">
                 <nav>
-                    <h4>Categorias</h4>
-                    <ul>
-                    {% for category in categories %}
-                        <li><a href="{{ category.get_absolute_url }}">{{ category }}</a> ({{ category.post__count }})</li>
-                    {% empty %}
-                        <li>Nada encontrado</li>
-                    {% endfor %}
-                    </ul>
+                    <h4>Busca</h4>
+                    <form id="search" action="" method="POST" />
+                        <input id="query" type="text" />
+                        <input type="submit" value="Enviar" />
+                    </form>
 
                     <br class="clear" />
 
@@ -94,6 +91,17 @@
                         </select>
                         <input type="submit" value="Enviar" />
                     </form>
+
+                    <br class="clear" />
+
+                    <h4>Categorias</h4>
+                    <ul>
+                    {% for category in categories %}
+                        <li><a href="{{ category.get_absolute_url }}">{{ category }}</a> ({{ category.post__count }})</li>
+                    {% empty %}
+                        <li>Nada encontrado</li>
+                    {% endfor %}
+                    </ul>
                 </nav>
             </aside>
         </div>
