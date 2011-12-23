@@ -40,11 +40,15 @@ body {
     padding: 6px;
     margin-top: 10px;
 }
+#header #top-menu .tabs li {
+    margin: 0 15px;
+}
 #header #top-menu .tabs li a {
     background: #000;
     border: 0;
     color: #FFF;
-    padding: 0 10px;
+    margin: 0;
+    padding: 0;
     font-size: 15px;
     font-weight: bold;
 }
@@ -84,7 +88,7 @@ body {
     font-size: 28px;
 }
 #main #articles article header ul .published-date {
-    background: url('http://www.leandrotoledo.blog.br/static/images/icons.gif') no-repeat left -40px;
+    background: url('/static/images/icons.gif') no-repeat left -40px;
 }
 #main #articles article .content {
     display: block;
@@ -95,7 +99,7 @@ body {
     margin-top: 8px;
 }
 #main #articles article .content .more-link a {
-    background: url('http://www.leandrotoledo.blog.br/static/images/icons.gif') no-repeat left -21px;
+    background: url('/static/images/icons.gif') no-repeat left -21px;
     font-weight: bold;
 }
 #main #articles article footer {
@@ -103,7 +107,7 @@ body {
     width: 100%;
 }
 #main #articles article footer ul .keywords {
-    background: url('http://www.leandrotoledo.blog.br/static/images/icons.gif') no-repeat -20px -240px;
+    background: url('/static/images/icons.gif') no-repeat -20px -240px;
     float: left;
 }
 #main #articles article footer ul .keywords div ul li {
@@ -114,10 +118,26 @@ body {
     text-transform: capitalize;
 }
 #main #articles article footer ul .comments {
-    background: url('http://www.leandrotoledo.blog.br/static/images/icons.gif') no-repeat left -100px;
+    background: url('/static/images/icons.gif') no-repeat left -100px;
     float: right;
 }
-
+#main #articles #pagination {
+    display: block;
+    margin: 20px 0;
+}
+#main #articles #pagination .step-links .next {
+    float: left;
+}
+#main #articles #pagination .step-links {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+}
+#main #articles #pagination .step-links .previous {
+    float: right;
+    margin-right: 30px;
+}
 #footer {
     border-top: 4px solid #000;
     margin-bottom: 10px;

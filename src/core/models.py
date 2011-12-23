@@ -26,6 +26,7 @@ class Post(models.Model):
     slug = models.CharField(max_length=50)
     excerpt = models.CharField(max_length=140)
     content = models.TextField()
+    # is_draft = models.BooleanField(default=True)
     published = models.BooleanField()
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
