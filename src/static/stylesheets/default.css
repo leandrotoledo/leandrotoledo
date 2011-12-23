@@ -86,6 +86,7 @@ body {
 }
 #main #articles article header h2 {
     font-size: 28px;
+    text-align: justify;
 }
 #main #articles article header ul .published-date {
     background: url('/static/images/icons.gif') no-repeat left -40px;
@@ -137,6 +138,14 @@ body {
 #main #articles #pagination .step-links .previous {
     float: right;
     margin-right: 30px;
+}
+#main #menu nav #archive #archives {
+    float: left;
+    margin-top: 4px;
+    width: 90px;
+}
+#main #menu nav #archive input {
+    float: right;
 }
 #footer {
     border-top: 4px solid #000;
