@@ -59,6 +59,12 @@ body {
 #main #articles {
     padding: 0 15px;
 }
+#main #articles .separator {
+	display: block;
+	clear: both;
+	margin: 0 auto;
+	height: 8px;
+}
 #main #articles h2 a {
     color: #333;
 }
@@ -71,7 +77,6 @@ body {
 }
 #main #articles article {
     margin-top: 20px;
-    margin-right: 30px;
 }
 #main #articles article:first-child {
     margin-top: 0px;
@@ -117,6 +122,7 @@ body {
 }
 #main #articles article footer ul .keywords div ul li a {
     text-transform: capitalize;
+    font-size: 13px;
 }
 #main #articles article footer ul .comments {
     background: url('/static/images/icons.gif') no-repeat left -100px;
@@ -124,20 +130,19 @@ body {
 }
 #main #articles #pagination {
     display: block;
-    margin: 20px 0;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+#main #articles #pagination .step-links {
+	display: block;
 }
 #main #articles #pagination .step-links .next {
     float: left;
 }
-#main #articles #pagination .step-links {
-    display: block;
-    font-size: 13px;
-    font-weight: bold;
-    text-align: center;
-}
 #main #articles #pagination .step-links .previous {
     float: right;
-    margin-right: 30px;
 }
 #main #menu {
     border-left: 1px solid #EEE;
@@ -155,6 +160,12 @@ body {
 }
 #main #menu ul li a:hover {
 	background: url('/static/images/icons.gif') no-repeat -4px -262px;
+}
+#main #menu #search {
+	margin: 0 0 20px 0;
+}
+#main #menu #search input {
+	margin: 4px 0;
 }
 #footer {
     border-top: 4px solid #000;

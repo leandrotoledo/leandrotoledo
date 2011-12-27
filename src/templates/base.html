@@ -57,12 +57,12 @@
 
                 {% if is_paginated %}
                     <div id="pagination">
+						<span class="current">Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</span>
+						
                         <span class="step-links">
                             {% if page_obj.has_next %}
                                 <a class="next" href="?page={{ page_obj.next_page_number }}">← Posts mais antigos</a>
                             {% endif %}
-
-                            Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
 
                             {% if page_obj.has_previous %}
                                 <a class="previous" href="?page={{ page_obj.previous_page_number }}">Posts mais recentes →</a>
@@ -80,8 +80,6 @@
                         <input type="submit" value="Enviar" />
                     </form>
 
-                    <br class="clear" />
-
                     <h4>Categorias</h4>
                     <ul>
                     {% for category in categories %}
@@ -90,8 +88,6 @@
                         <li>Nada encontrado</li>
                     {% endfor %}
                     </ul>
-
-                    <br class="clear" />
 
                     <h4>Arquivos</h4>
                     <ul>
