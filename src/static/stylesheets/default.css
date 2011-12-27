@@ -143,26 +143,18 @@ body {
     border-left: 1px solid #EEE;
     padding-left: 15px;
 }
-#main #menu nav #archive #archives {
-    float: left;
-    margin: 0;
-    padding: 3px 0;
-    width: 90px;
-    text-align: center;
+#main #menu ul li {
+	display: block;
+	margin: 4px 0;
 }
-#main #menu nav #archive input {
-    float: left;
-    margin-left: 4px;
+#main #menu ul li a {
+	background: url('/static/images/icons.gif') no-repeat 6px -282px;
+	padding: 0 0 0 20px;
+	font-size: 13px;
+	text-decoration: none;
 }
-#main #menu nav #search #query {
-    float: left;
-    margin: 0;
-    padding: 4px;
-    width: 79px;
-}
-#main #menu nav #search input {
-    float: left;
-    margin-left: 4px;
+#main #menu ul li a:hover {
+	background: url('/static/images/icons.gif') no-repeat -4px -262px;
 }
 #footer {
     border-top: 4px solid #000;

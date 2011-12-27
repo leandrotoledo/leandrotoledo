@@ -82,18 +82,6 @@
 
                     <br class="clear" />
 
-                    <h4>Arquivos</h4>
-                    <form id="archive" action="" method="POST" />
-                        <select id="archives">
-                        {% for archive in archives reversed %}
-                            <option value="{% url 'archive_month' archive|date:'Y' archive|date:'m' %}">{{ archive|date:'m/Y' }}</option>
-                        {% endfor %}
-                        </select>
-                        <input type="submit" value="Enviar" />
-                    </form>
-
-                    <br class="clear" />
-
                     <h4>Categorias</h4>
                     <ul>
                     {% for category in categories %}
@@ -102,6 +90,17 @@
                         <li>Nada encontrado</li>
                     {% endfor %}
                     </ul>
+
+                    <br class="clear" />
+
+                    <h4>Arquivos</h4>
+                    <ul>
+					{% for archive in archives reversed %}
+						<li><a href="{% url 'archive_month' archive|date:'Y' archive|date:'m' %}">{{ archive|date:'m/Y' }}</a></li>
+					{% empty %}
+                        <li>Nada encontrado</li>
+					{% endfor %}
+					</ul>
                 </nav>
             </aside>
         </div>
