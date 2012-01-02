@@ -1,0 +1,46 @@
+#main #articles .article {
+    margin: 0 20px 0 0;
+}
+#main #articles .article * a {
+    color: #06C;
+    text-decoration: none;
+}
+#main #articles .article * a:hover {
+    color: #09F;
+}
+#main #articles .article .title {
+    font-size: 28px;
+    text-align: justify;
+    margin: 0;
+}
+#main #articles .article .title a {
+    color: #333;
+    text-decoration: none;
+}
+#main #articles .article .content {
+    display: block;
+    text-align: justify;
+    margin: 10px 0;
+}
+#main #articles .article .published-date, .more-link a, .comments a, .keywords {
+    padding-left: 20px;
+    font-size: 13px;
+    color: #888;
+}
+#main #articles .article .published-date {
+    background: url('/static/images/icons.gif') no-repeat left -40px;
+}
+#main #articles .article .more-link a {
+    background: url('/static/images/icons.gif') no-repeat left -21px;
+    font-weight: bold;
+}
+#main #articles .article .comments {
+    float: right;
+}
+#main #articles .article .comments a {
+    background: url('/static/images/icons.gif') no-repeat left -100px;
+}
+#main #articles .article .keywords {
+    background: url('/static/images/icons.gif') no-repeat -20px -240px;
+    float: left;
+}

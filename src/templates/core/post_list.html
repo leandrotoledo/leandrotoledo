@@ -5,9 +5,9 @@
 
 {% block articles %}
     {% for post in object_list %}
-        <article itemscope itemtype="http://schema.org/BlogPosting">
+        <article class="article" itemscope itemtype="http://schema.org/BlogPosting">
             <header>
-                <h2><a href="{{ post.get_absolute_url }}"><span itemprop="name">{{ post.title }}</span></a></h2>
+                <h2 class="title"><a href="{{ post.get_absolute_url }}"><span itemprop="name">{{ post.title }}</span></a></h2>
                  <ul>
                     <li class="published-date">por <span itemprop="author">{{ post.user }}</span> em <time datetime="{{ post.published_date|date:'Y-m-d' }}"><span itemprop="datePublished">{{ post.published_date|date:'d/m/Y' }}</span></time></li>
                 </ul>
@@ -42,7 +42,8 @@
                 </ul>
             </footer>
         </article>
-        <img class="separator" src="{{ STATIC_URL }}images/separator.png" />
+        <br class="clear" />
+        <!--<img class="separator" src="{{ STATIC_URL }}images/separator.png" />-->
     {% empty %}
         <h2>Nada encontrado</h2>
     {% endfor %}

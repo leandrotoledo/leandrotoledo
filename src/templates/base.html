@@ -17,15 +17,15 @@
     <link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/skeleton/base.css">
     <link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/skeleton/skeleton.css">
     <link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/skeleton/layout.css">
-    <link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/default.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/layout-default/base.css">
 </head>
 <body>
     {% spaceless %}
     <div class="container">
         <header id="header" class="sixteen columns clearfix">
-            <h1>Blog do Leandro Toledo</h1>
+            <h1 id="title">Blog do Leandro Toledo</h1>
             <hr />
-            <div class="row">
+            <div id="quote" class="row">
                 <blockquote class="fourteen columns alpha">
                     <p>
                         Se eu tiver uma maçã e você também tiver uma maçã, e trocarmos de maçãs, cada um ficará com uma maçã.<br />
@@ -33,17 +33,17 @@
                     </p>
                     <cite>George Bernard Shaw</cite>
                 </blockquote>
-                <img class="two columns omega" src="{{ STATIC_URL }}images/linux-logo.png" alt="" />
+                <img id="logo" class="two columns omega" src="{{ STATIC_URL }}images/linux-logo.png" alt="" />
             </div>
 
             <nav id="top-menu">
-                <ul class="tabs">
+                <ul>
                     <li><a href="{% url 'index' %}">Home</a></li>
                     {% get_flatpages as flatpages %}
                     {% for page in flatpages %}
                         <li><a href="{{ page.url }}">{{ page.title }}</a></li>
                     {% endfor %}
-                    <li style="float: right;"><a href="">RSS</a></li>
+                    <li id="rss"><a href="">RSS</a></li>
                 </ul>
             </nav>
         </header>
@@ -57,8 +57,8 @@
 
                 {% if is_paginated %}
                     <div id="pagination">
-						<span class="current">Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</span>
-						
+                        <span class="current">Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</span>
+
                         <span class="step-links">
                             {% if page_obj.has_next %}
                                 <a class="next" href="?page={{ page_obj.next_page_number }}">← Posts mais antigos</a>
@@ -72,13 +72,15 @@
                 {% endif %}
             </div>
 
-            <aside id="menu" class="three columns omega sidebar">
+            <aside id="menu" class="four columns omega sidebar">
                 <nav>
                     <h4>Busca</h4>
                     <form id="search" action="" method="POST" />
                         <input id="query" type="text" />
                         <input type="submit" value="Enviar" />
                     </form>
+
+                    <br />
 
                     <h4>Categorias</h4>
                     <ul>
@@ -89,20 +91,22 @@
                     {% endfor %}
                     </ul>
 
+                    <br />
+
                     <h4>Arquivos</h4>
                     <ul>
-					{% for archive in archives reversed %}
-						<li><a href="{% url 'archive_month' archive|date:'Y' archive|date:'m' %}">{{ archive|date:'m/Y' }}</a></li>
-					{% empty %}
+                    {% for archive in archives reversed %}
+                        <li><a href="{% url 'archive_month' archive|date:'Y' archive|date:'m' %}">{{ archive|date:'m/Y' }}</a></li>
+                    {% empty %}
                         <li>Nada encontrado</li>
-					{% endfor %}
-					</ul>
+                    {% endfor %}
+                    </ul>
                 </nav>
             </aside>
         </div>
 
         <footer id="footer" class="sixteen columns clearfix">
-            <div itemscope itemtype="http://n.whatwg.org/work">
+            <div id="license" itemscope itemtype="http://n.whatwg.org/work">
                 <a id="creative-commons-license" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width: 0;" src="http://www.leandrotoledo.blog.br/static/images/buttons/creativecommons_by-nc-sa.png"></a>
                 O <a itemprop="work" href="http://leandrotoledo.blog.br/"><span>Blog do Leandro Toledo</span></a> por <a itemprop="author" href="/about/"><span>Leandro Toledo de Souza</span></a> está sob a licença <a itemprop="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><abbr title="Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License"><span>CC-BY-NC-SA</span></abbr></a>.
             </div>
