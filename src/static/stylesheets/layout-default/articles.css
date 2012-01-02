@@ -1,12 +1,27 @@
-#main #articles .article {
-    margin: 0 20px 0 0;
-}
-#main #articles .article * a {
+#main #articles * a {
     color: #06C;
     text-decoration: none;
 }
-#main #articles .article * a:hover {
+#main #articles * a:hover {
     color: #09F;
+}
+#main #articles .article {
+    border-top: 1px solid #AAA;
+    border-bottom: 1px solid #AAA;
+    margin: 0 20px 0 0;
+    padding: 10px;
+    box-shadow: 0 -5px 5px -5px #AAA, 0 5px 5px -5px #AAA;
+    border-radius: 10px;
+    overflow: auto;
+}
+#main #articles .detail {
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding: 0 10px;
+}
+#main #articles .article header {
+    overflow: auto;
 }
 #main #articles .article .title {
     font-size: 28px;
@@ -17,8 +32,16 @@
     color: #333;
     text-decoration: none;
 }
+#main #articles .article .excerpt {
+    color: #666;
+    clear: both;
+    text-align: justify;
+    margin: 20px 0;
+    padding: 10px 20px;
+    box-shadow: 0 -5px 5px -5px #333, 0 5px 5px -5px #333;
+}
 #main #articles .article .content {
-    display: block;
+    clear: both;
     text-align: justify;
     margin: 10px 0;
 }
@@ -39,8 +62,30 @@
 }
 #main #articles .article .comments a {
     background: url('/static/images/icons.gif') no-repeat left -100px;
+    color: #888;
 }
 #main #articles .article .keywords {
     background: url('/static/images/icons.gif') no-repeat -20px -240px;
     float: left;
+}
+#main #articles .article .keywords ul {
+    margin: 0;
+}
+#main #articles .article .keywords ul li {
+    float: left;
+    margin: 0 5px 0 0;
+}
+#main #articles #pagination {
+    text-align: center;
+    margin: 20px 20px 0 0;
+}
+#main #articles #pagination .step-links {
+    display: block;
+    overflow: auto;
+}
+#main #articles #pagination .step-links .next {
+    float: left;
+}
+#main #articles #pagination .step-links .previous {
+    float: right;
 }

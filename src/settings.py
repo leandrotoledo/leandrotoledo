@@ -101,6 +101,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
     'django.core.context_processors.static',
     'django.contrib.messages.context_processors.messages',
+    'core.context_processors.site',
+    'core.context_processors.author',
     'core.context_processors.archives',
     'core.context_processors.categories',
 )

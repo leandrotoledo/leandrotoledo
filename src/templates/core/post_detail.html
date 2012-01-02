@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% load comments %}
+{% load url from future %}
+
+{% block articles %}
+    <article class="article detail" itemscope itemtype="http://schema.org/BlogPosting">
+        <header>
+            <h2 class="title"><a href="{{ post.get_absolute_url }}"><span itemprop="name">{{ post.title }}</span></a></h2>
+             <ul>
+                <li class="published-date">por <span itemprop="author">{{ post.user }}</span> em <time datetime="{{ post.published_date|date:'Y-m-d' }}"><span itemprop="datePublished">{{ post.published_date|date:'d/m/Y' }}</span></time></li>
+                <li class="keywords">Categoria(s):
+                    <div itemprop="keywords">
+                        <ul>
+                        {% for category in post.category.all %}
+                            <li><a href="">{{ category }}</a></li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </li>
+                <li class="comments">
+                    {% get_comment_count for post as comment_count %}
+                    {% if comment_count > 0 %}
+                        <a href="{{ post.get_absolute_url }}#comments-section">{{ get_comment_count }} comentário(s)</a>
+                    {% else %}
+                        <a href="{{ post.get_absolute_url }}#comments-section">Deixe um comentário</a>
+                    {% endif %}
+                </li>
+            </ul>
+        </header>
+
+        <div class="excerpt">
+            {{ post.excerpt|safe|escape }}
+        </div>
+
+        <div class="content">
+            {{ post.content|safe|escape }}
+        </div>
+    </article>
+{% endblock %}
