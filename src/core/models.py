@@ -21,9 +21,9 @@ class Category(models.Model):
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=50)
-    slug = models.CharField(max_length=50)
-    excerpt = models.CharField(max_length=140)
+    title = models.CharField(max_length=65)
+    slug = models.CharField(max_length=65)
+    excerpt = models.CharField(max_length=150)
     content = models.TextField()
     # is_draft = models.BooleanField(default=True)
     published = models.BooleanField()

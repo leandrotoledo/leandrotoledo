@@ -9,7 +9,7 @@
             <header>
                 <h2 class="title"><a href="{{ post.get_absolute_url }}"><span itemprop="name">{{ post.title }}</span></a></h2>
                  <ul>
-                    <li class="published-date">por <span itemprop="author">{{ post.user }}</span> em <time datetime="{{ post.published_date|date:'Y-m-d' }}"><span itemprop="datePublished">{{ post.published_date|date:'d/m/Y' }}</span></time></li>
+                    <li class="published-date">por <span itemprop="author">{{ author.first_name }} {{ author.last_name }}</span> em <time datetime="{{ post.published_date|date:'Y-m-d' }}"><span itemprop="datePublished">{{ post.published_date|date:'d/m/Y' }}</span></time></li>
                 </ul>
             </header>
 
