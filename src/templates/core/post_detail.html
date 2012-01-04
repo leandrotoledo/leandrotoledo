@@ -5,9 +5,13 @@
 
 {% block title %}{{ post.title }}{% endblock %}
 
-{% block name %}{{ post.title }}{% endblock %}
-{% block keywords %}{{ post.category.all }}{% endblock %}
-{% block description %}{{ post.excerpt }}{% endblock %}
+{% block meta %}
+<meta itemprop="name" content="{{ post.title }}">
+<meta itemprop="keywords" content="{{ post.category.all }}">
+<meta itemprop="description" content="{{ post.excerpt }}">
+<meta property="og:title" content="{{ post.title }}" />
+<meta property="og:description" content="{{ post.excerpt }}" />
+{% endblock %}
 
 {% block articles %}
     <article class="article detail" itemscope itemtype="http://schema.org/BlogPosting">

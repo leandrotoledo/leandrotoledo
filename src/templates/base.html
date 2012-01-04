@@ -8,9 +8,13 @@
 <head>
     <meta charset="utf-8">
     <title>{% block title %}{{ site.name }}{% endblock %}</title>
-    <meta itemprop="name" content="{% block name %}{% endblock %}">
-    <meta itemprop="keywords" content="{% block keywords %}{% endblock %}">
-    <meta itemprop="description" content="{% block description %}{% endblock %}">
+    {% block meta %}
+    <meta itemprop="name" content="{{ site.name }}">
+    <meta itemprop="keywords" content="">
+    <meta itemprop="description" content="">
+    <meta property="og:title" content="{{ site.name }}" />
+    <meta property="og:description" content="" />
+    {% endblock %}
     <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
