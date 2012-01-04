@@ -3,6 +3,12 @@
 {% load comments %}
 {% load url from future %}
 
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block name %}{{ post.title }}{% endblock %}
+{% block keywords %}{{ post.category.all }}{% endblock %}
+{% block description %}{{ post.excerpt }}{% endblock %}
+
 {% block articles %}
     <article class="article detail" itemscope itemtype="http://schema.org/BlogPosting">
         <header>
@@ -29,7 +35,7 @@
             </ul>
         </header>
 
-        <div class="excerpt">
+        <div class="excerpt" itemprop="description">
             {{ post.excerpt|safe|escape }}
         </div>
 
