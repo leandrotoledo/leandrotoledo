@@ -4,12 +4,7 @@
 {% load url from future %}
 
 {% block title %}{{ post.title }}{% endblock %}
-
-{% block meta %}
-<meta itemprop="name" content="{{ post.title }}">
-<meta itemprop="keywords" content="{{ post.category.all }}">
-<meta itemprop="description" content="{{ post.excerpt }}">
-{% endblock %}
+{% block description %}{{ post.excerpt }}{% endblock %}
 
 {% block articles %}
     <article class="article detail" itemscope itemtype="http://schema.org/BlogPosting">
