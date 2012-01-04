@@ -9,6 +9,8 @@ ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
 
+AUTH_PROFILE_MODULE = 'core.UserProfile'
+
 MANAGERS = ADMINS
 
 DATABASES = {

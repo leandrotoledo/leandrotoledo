@@ -1,6 +1,8 @@
 from django.db import models
 from django.db.models import permalink
+from django.db.models.signals import post_save
 from django.contrib.auth.models import User
+from django.contrib.sites.models import Site
 from django.template.defaultfilters import slugify
 
 
@@ -50,3 +52,20 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['-published_date']
+
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User)
+    google_profile = models.CharField(max_length=50)
+
+
+class SiteDetail(models.Model):
+    site = models.OneToOneField(Site)
+    keywords = models.CharField(max_length=150)
+    description = models.CharField(max_length=150)
+
+
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        UserProfile.objects.create(user=instance)
+post_save.connect(create_user_profile, sender=User)
