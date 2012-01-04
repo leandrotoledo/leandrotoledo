@@ -63,9 +63,3 @@ class SiteDetail(models.Model):
     site = models.OneToOneField(Site)
     keywords = models.CharField(max_length=150)
     description = models.CharField(max_length=150)
-
-
-def create_user_profile(sender, instance, created, **kwargs):
-    if created:
-        UserProfile.objects.create(user=instance)
-post_save.connect(create_user_profile, sender=User)

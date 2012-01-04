@@ -16,7 +16,7 @@
         <header>
             <h2 class="title"><a href="{{ post.get_absolute_url }}"><span itemprop="name">{{ post.title }}</span></a></h2>
              <ul>
-                <li class="published-date">por <a rel="author" href="https://profiles.google.com/{{ author.get_profile.google_profile }}/" target="_blank"><span itemprop="author">{{ author.first_name }} {{ author.last_name }}</span></a> em <time datetime="{{ post.published_date|date:'Y-m-d' }}"><span itemprop="datePublished">{{ post.published_date|date:'d/m/Y' }}</span></time></li>
+                <li class="published-date">por <a rel="author" href="https://profiles.google.com/{{ author.userprofile.google_profile }}/" target="_blank"><span itemprop="author">{{ author.first_name }} {{ author.last_name }}</span></a> em <time datetime="{{ post.published_date|date:'Y-m-d' }}"><span itemprop="datePublished">{{ post.published_date|date:'d/m/Y' }}</span></time></li>
                 <li class="keywords">Categoria(s):
                     <div itemprop="keywords">
                         <ul>
