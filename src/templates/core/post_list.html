@@ -34,9 +34,9 @@
                     <li class="comments">
                         {% get_comment_count for post as comment_count %}
                         {% if comment_count > 0 %}
-                            <a href="{{ post.get_absolute_url }}#comments-section">{{ get_comment_count }} comentário(s)</a>
+                            <a href="{{ post.get_absolute_url }}#comments-section">{{ comment_count }} comentário(s)</a>
                         {% else %}
-                            <a href="{{ post.get_absolute_url }}#comments-section">Deixe um comentário</a>
+                            <a href="{{ post.get_absolute_url }}#comments-form">Deixe um comentário</a>
                         {% endif %}
                     </li>
                 </ul>

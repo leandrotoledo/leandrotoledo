@@ -24,9 +24,9 @@
                 <li class="comments">
                     {% get_comment_count for post as comment_count %}
                     {% if comment_count > 0 %}
-                        <a href="{{ post.get_absolute_url }}#comments-section">{{ get_comment_count }} comentário(s)</a>
+                        <a href="{{ post.get_absolute_url }}#comments-section">{{ comment_count }} comentário(s)</a>
                     {% else %}
-                        <a href="{{ post.get_absolute_url }}#comments-section">Deixe um comentário</a>
+                        <a href="{{ post.get_absolute_url }}#comments-form">Deixe um comentário</a>
                     {% endif %}
                 </li>
             </ul>
@@ -38,6 +38,44 @@
 
         <div class="content">
             {{ post.content|safe|escape }}
+        </div>
+
+        <br />
+
+        <div id="comments">
+            {% get_comment_count for post as comment_count %}
+            {% if comment_count > 0 %}
+                <h2 class="comments-anchor"><a id="comments-section">{{ comment_count }} resposta(s) para este artigo</a></h2>
+                {% get_comment_list for post as comment_list %}
+                {% for comment in comment_list %}
+                    <article>
+                        <ul>
+                            {% if comment.user_url %}
+                            <li class="username"><a href="{{ comment.user_url }}" target="_blank">{{ comment.user_name }}</a></li>
+                            {% else %}
+                            <li class="username"><strong>{{ comment.user_name }}</strong></li>
+                            {% endif %}
+                        </ul>
+
+                        <div class="content">{{ comment.comment }}</div>
+
+                        <ul>
+                            <li class="published-date"><a id="c{{ comment.pk }}" href="{{ post.get_absolute_url }}#c{{ comment.pk }}">em <time datetime="{{ comment.submit_date|date:'c' }}">{{ comment.submit_date|date:'d/m/Y \à\s h:i A' }}</time></a></li>
+                        </ul>
+
+                    </article>
+                    <br />
+                {% endfor %}
+            {% endif %}
+
+            {% get_comment_form for post as form %}
+            <h2 class="comments-anchor"><a id="comments-form">Deixe um comentário</a></h2>
+            <form action="{% comment_form_target %}" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="hidden" name="next" value="{{ post.get_absolute_url }}" />
+                <input type="submit" name="submit" value="Publicar">
+            </form>
         </div>
     </article>
 {% endblock %}
