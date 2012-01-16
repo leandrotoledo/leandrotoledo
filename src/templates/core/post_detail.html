@@ -3,22 +3,24 @@
 {% load comments %}
 {% load url from future %}
 
-{% block type %}Article{% endblock %}
+{% block type %}BlogPosting{% endblock %}
 {% block title %}{{ post.title }}{% endblock %}
 {% block meta %}
-<meta itemprop="name" content="{{ site.name }}">
+<meta itemprop="name" content="{{ post.title }}">
 <meta itemprop="description" content="{{ post.excerpt }}">
 <meta itemprop="keywords" content="{{ post.category.all }}">
+<meta itemprop="author" content="{{ author.first_name }} {{ author.last_name }}">
+<meta itemprop="datePublished" content="{{ post.published_date|date:'d/m/Y' }}">
 {% endblock %}
 
 {% block articles %}
-    <article class="article detail" itemscope itemtype="http://schema.org/BlogPosting">
+    <article class="article detail">
         <header>
-            <h2 class="title"><a href="{{ post.get_absolute_url }}"><span itemprop="name">{{ post.title }}</span></a></h2>
+            <h2 class="title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
              <ul>
-                <li class="published-date">por <a rel="author" href="https://profiles.google.com/{{ author.userprofile.google_profile }}/" target="_blank"><span itemprop="author">{{ author.first_name }} {{ author.last_name }}</span></a> em <time datetime="{{ post.published_date|date:'Y-m-d' }}"><span itemprop="datePublished">{{ post.published_date|date:'d/m/Y' }}</span></time></li>
+                <li class="published-date">por <a rel="author" href="https://profiles.google.com/{{ author.userprofile.google_profile }}/" target="_blank">{{ author.first_name }} {{ author.last_name }}</a> em <time datetime="{{ post.published_date|date:'Y-m-d' }}">{{ post.published_date|date:'d/m/Y' }}</time></li>
                 <li class="keywords">Categoria(s):
-                    <div itemprop="keywords">
+                    <div>
                         <ul>
                         {% for category in post.category.all %}
                             <li><a href="">{{ category }}</a></li>
@@ -37,7 +39,7 @@
             </ul>
         </header>
 
-        <div class="excerpt" itemprop="description">
+        <div class="excerpt">
             {{ post.excerpt|safe|escape }}
             <br />
             <div class="google-plus">
