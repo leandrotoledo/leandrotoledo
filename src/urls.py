@@ -14,7 +14,7 @@ urlpatterns = patterns('',
     url(r'^comments/',  include('django.contrib.comments.urls')),
 
     url(r'^$',
-        ListView.as_view(model=Post, paginate_by=4),
+        ListView.as_view(queryset=Post.objects.filter(is_draft=False), paginate_by=4),
         name='index'),
 
     (r'^posts/$',

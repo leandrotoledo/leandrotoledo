@@ -5,7 +5,7 @@ from django.contrib import admin
 class PostAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {
-            'fields': ('title', 'excerpt', 'content', 'category', 'published', 'published_date')
+            'fields': ('title', 'excerpt', 'content', 'category', 'is_draft', 'published_date')
         }),
     )
 
