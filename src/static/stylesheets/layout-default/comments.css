@@ -34,6 +34,9 @@
     color: #666;
     font-weight: normal;
 }
+#comments form label[for=id_honeypot] {
+    font-weight: bold;
+}
 #comments form input[type=text] {
     width: 50%;
 }

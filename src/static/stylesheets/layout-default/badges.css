@@ -1,0 +1,9 @@
+#badges {
+    text-align: center;
+}
+#badges a {
+    margin: 0 2px;
+}
+#badges a img {
+    box-shadow: 0 0 1px 1px #AAA;
+}
