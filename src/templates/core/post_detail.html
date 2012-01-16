@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% load comments %}
+{% load url from future %}
+
+{% block type %}BlogPosting{% endblock %}
+{% block title %}{{ post.title }}{% endblock %}
+{% block meta %}
+<meta itemprop="name" content="{{ post.title }}">
+<meta itemprop="description" content="{{ post.excerpt }}">
+<meta itemprop="keywords" content="{{ post.category.all }}">
+<meta itemprop="author" content="{{ author.first_name }} {{ author.last_name }}">
+<meta itemprop="datePublished" content="{{ post.published_date|date:'d/m/Y' }}">
+{% endblock %}
+
+{% block articles %}
+    <article class="article detail">
+        <header>
+            <h2 class="title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+             <ul>
+                <li class="published-date">por <a rel="author" href="https://profiles.google.com/{{ author.userprofile.google_profile }}/" target="_blank">{{ author.first_name }} {{ author.last_name }}</a> em <time datetime="{{ post.published_date|date:'Y-m-d' }}">{{ post.published_date|date:'d/m/Y' }}</time></li>
+                <li class="keywords">Categoria(s):
+                    <div>
+                        <ul>
+                        {% for category in post.category.all %}
+                            <li><a href="">{{ category }}</a></li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </li>
+                <li class="comments">
+                    {% get_comment_count for post as comment_count %}
+                    {% if comment_count > 0 %}
+                        <a href="{{ post.get_absolute_url }}#comments-section">{{ comment_count }} comentário(s)</a>
+                    {% else %}
+                        <a href="{{ post.get_absolute_url }}#comments-form">Deixe um comentário</a>
+                    {% endif %}
+                </li>
+            </ul>
+        </header>
+
+        <div class="excerpt">
+            {{ post.excerpt|safe|escape }}
+            <br />
+            <div class="google-plus">
+                <div class="g-plusone" data-size="small" data-annotation="inline"></div>
+            </div>
+        </div>
+
+        <div class="content">
+            {{ post.content|safe|escape }}
+        </div>
+
+        <br />
+
+        <div id="comments">
+            {% get_comment_count for post as comment_count %}
+            {% if comment_count > 0 %}
+                <h2 class="comments-anchor"><a id="comments-section">{{ comment_count }} resposta(s) para este artigo</a></h2>
+                {% get_comment_list for post as comment_list %}
+                {% for comment in comment_list %}
+                    <article>
+                        <ul>
+                            {% if comment.user_url %}
+                            <li class="username"><a href="{{ comment.user_url }}" target="_blank">{{ comment.user_name }}</a></li>
+                            {% else %}
+                            <li class="username"><strong>{{ comment.user_name }}</strong></li>
+                            {% endif %}
+                        </ul>
+
+                        <div class="content">{{ comment.comment }}</div>
+
+                        <ul>
+                            <li class="published-date"><a id="c{{ comment.pk }}" href="{{ post.get_absolute_url }}#c{{ comment.pk }}">em <time datetime="{{ comment.submit_date|date:'c' }}">{{ comment.submit_date|date:'d/m/Y \à\s h:i A' }}</time></a></li>
+                        </ul>
+
+                    </article>
+                    <br />
+                {% endfor %}
+            {% endif %}
+
+            {% get_comment_form for post as form %}
+            <h2 class="comments-anchor"><a id="comments-form">Deixe um comentário</a></h2>
+            <form action="{% comment_form_target %}" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="hidden" name="next" value="{{ post.get_absolute_url }}" />
+                <input type="submit" name="submit" value="Publicar">
+            </form>
+        </div>
+    </article>
+{% endblock %}

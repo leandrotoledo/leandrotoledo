@@ -5,11 +5,11 @@
 
 {% block articles %}
     {% for post in object_list %}
-        <article itemscope itemtype="http://schema.org/BlogPosting">
+        <article class="article" itemscope itemtype="http://schema.org/BlogPosting">
             <header>
-                <h2><a href="{{ post.get_absolute_url }}"><span itemprop="name">{{ post.title }}</span></a></h2>
+                <h2 class="title"><a href="{{ post.get_absolute_url }}"><span itemprop="name">{{ post.title }}</span></a></h2>
                  <ul>
-                    <li class="published-date">por <span itemprop="author">{{ post.user }}</span> em <time datetime="{{ post.published_date|date:'Y-m-d' }}"><span itemprop="datePublished">{{ post.published_date|date:'d/m/Y' }}</span></time></li>
+                    <li class="published-date">por <a rel="author" href="https://profiles.google.com/{{ author.userprofile.google_profile }}/" target="_blank"><span itemprop="author">{{ author.first_name }} {{ author.last_name }}</span></a> em <time datetime="{{ post.published_date|date:'Y-m-d' }}"><span itemprop="datePublished">{{ post.published_date|date:'d/m/Y' }}</span></time></li>
                 </ul>
             </header>
 
@@ -34,15 +34,15 @@
                     <li class="comments">
                         {% get_comment_count for post as comment_count %}
                         {% if comment_count > 0 %}
-                            <a href="{{ post.get_absolute_url }}#comments-section">{{ get_comment_count }} comentário(s)</a>
+                            <a href="{{ post.get_absolute_url }}#comments-section">{{ comment_count }} comentário(s)</a>
                         {% else %}
-                            <a href="{{ post.get_absolute_url }}#comments-section">Deixe um comentário</a>
+                            <a href="{{ post.get_absolute_url }}#comments-form">Deixe um comentário</a>
                         {% endif %}
                     </li>
                 </ul>
             </footer>
         </article>
-        <img class="separator" src="{{ STATIC_URL }}images/separator.png" />
+        <br />
     {% empty %}
         <h2>Nada encontrado</h2>
     {% endfor %}

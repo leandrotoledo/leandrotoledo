@@ -1,0 +1,46 @@
+#main #articles .detail .content h2 {
+    font-size: 22px;
+    margin: 0;
+}
+#main #articles .detail .content p {
+    margin: 0 0 10px 0;
+    padding: 0;
+    text-align: justify;
+}
+#main #articles .detail .content img {
+    display: block;
+    margin: 10px auto;
+}
+#main #articles .detail .content ol {
+    margin: 0 0 0 10px;
+    padding: 0 10px;
+}
+#main #articles .detail .content ul li {
+    padding: 0 0 0 10px;
+    margin: 10px 0;
+    background: url("/static/images/list.png") no-repeat left 4px;
+}
+#main #articles .detail .content blockquote {
+    background: #F4F4F4 url("/static/images/blockquote.png") no-repeat;
+    border-left: 10px solid #DBDBDB;
+    text-align: justify;
+    margin: 10px 0;
+    padding: 20px 25px 20px 75px;
+
+}
+#main #articles .detail .content blockquote p {
+    font-size: 14px;
+    margin: 0;
+}
+#main #articles .detail .content pre {
+    color: #FFF;
+    font-family: "Ubuntu Mono" !important;
+    font-size: 14px;
+    background: #000;
+    margin: 10px 0;
+    padding: 10px;
+    overflow: auto;
+}
+#main #articles .detail .content pre strong {
+    color: #FFF;
+}

@@ -1,4 +1,4 @@
-from core.models import Category, Post
+from core.models import Category, Post, UserProfile, SiteDetail
 from django.contrib import admin
 
 
@@ -24,3 +24,5 @@ class CategoryAdmin(admin.ModelAdmin):
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(UserProfile)
+admin.site.register(SiteDetail)
