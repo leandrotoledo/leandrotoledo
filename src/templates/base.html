@@ -1,17 +1,19 @@
 {% load flatpages %}
 {% load url from future %}
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="pt-br" itemscope itemtype="http://schema.org/Blog"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="pt-br" itemscope itemtype="http://schema.org/Blog"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="pt-br" itemscope itemtype="http://schema.org/Blog"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="pt-br" itemscope itemtype="http://schema.org/Blog"> <!--<![endif]-->
+<!--[if lt IE 7 ]><html class="ie ie6" lang="pt-br"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="pt-br"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="pt-br"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="pt-br" itemscope itemtype="http://schema.org/{% block type %}Blog{% endblock %}"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <title>{% block title %}{{ site.name }}{% endblock %}</title>
-    <meta name="description" content="{% block description %}{{ site.sitedetail.description }}{% endblock %}">
+    {% block meta %}
     <meta itemprop="name" content="{{ site.name }}">
-    <meta itemprop="keywords" content="{{ site.sitedetail.keywords }}">
     <meta itemprop="description" content="{{ site.sitedetail.description }}">
+    <meta itemprop="keywords" content="{{ site.sitedetail.keywords }}">
+    {% endblock %}
+    <meta itemprop="image" content="{{ STATIC_URL }}images/linux-logo.png">
     <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -21,18 +23,29 @@
     <link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/skeleton/layout.css">
     <link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/layout-default/base.css">
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} Feed" href="http://{{ site }}/feed/" />
-    <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-16485022-3']);
-    _gaq.push(['_setDomainName', 'leandrotoledo.blog.br']);
-    _gaq.push(['_setAllowLinker', true]);
-    _gaq.push(['_trackPageview']);
 
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
+    <script type="text/javascript">
+        window.___gcfg = {lang: 'pt-BR'};
+
+        (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+        })();
+    </script>
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-16485022-3']);
+        _gaq.push(['_setDomainName', 'leandrotoledo.blog.br']);
+        _gaq.push(['_setAllowLinker', true]);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
     </script>
 </head>
 <body>

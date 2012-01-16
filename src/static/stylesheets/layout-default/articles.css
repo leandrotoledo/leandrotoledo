@@ -40,6 +40,10 @@
     padding: 10px 20px;
     box-shadow: 0 -5px 5px -5px #333, 0 5px 5px -5px #333;
 }
+#main #articles .article .excerpt .google-plus {
+    display: block;
+    margin: 10px 0 0 0;
+}
 #main #articles .article .content {
     clear: both;
     text-align: justify;

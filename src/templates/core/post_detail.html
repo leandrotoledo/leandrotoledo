@@ -3,8 +3,13 @@
 {% load comments %}
 {% load url from future %}
 
+{% block type %}Article{% endblock %}
 {% block title %}{{ post.title }}{% endblock %}
-{% block description %}{{ post.excerpt }}{% endblock %}
+{% block meta %}
+<meta itemprop="name" content="{{ site.name }}">
+<meta itemprop="description" content="{{ post.excerpt }}">
+<meta itemprop="keywords" content="{{ post.category.all }}">
+{% endblock %}
 
 {% block articles %}
     <article class="article detail" itemscope itemtype="http://schema.org/BlogPosting">
@@ -34,6 +39,10 @@
 
         <div class="excerpt" itemprop="description">
             {{ post.excerpt|safe|escape }}
+            <br />
+            <div class="google-plus">
+                <div class="g-plusone" data-size="small" data-annotation="inline"></div>
+            </div>
         </div>
 
         <div class="content">
