@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/skeleton/skeleton.css">
     <link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/skeleton/layout.css">
     <link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/layout-default/base.css">
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} Feed" href="http://{{ site }}/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} Feed" href="https://{{ site }}/feed/" />
 
     <script type="text/javascript">
         window.___gcfg = {lang: 'pt-BR'};
@@ -72,7 +72,7 @@
                     {% for page in flatpages %}
                         <li><a href="{{ page.url }}">{{ page.title }}</a></li>
                     {% endfor %}
-                    <li id="rss"><a href="">RSS</a></li>
+                    <li id="rss"><a href="https://{{ site }}/feed">RSS</a></li>
                 </ul>
             </nav>
         </header>

@@ -22,6 +22,11 @@ DATABASES = {
     }
 }
 
+# Whether to use a secure cookie for the session cookie. If this is set 
+# to True, the cookie will be marked as "secure," which means browsers 
+# may ensure that the cookie is only sent under an HTTPS connection.
+SESSION_COOKIE_SECURE = True
+
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
