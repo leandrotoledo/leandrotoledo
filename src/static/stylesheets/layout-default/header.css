@@ -1,43 +1,10 @@
-#header #title {
-    padding: 0;
-    margin: 10px 0;
-}
-#header hr {
-    border: 2px solid #000;
-    margin: 0;
-}
-#header #quote {
-    margin: 10px 0;
-}
-#header #quote blockquote {
-    border: 0;
-    margin: 0;
-    padding: 25px 0 0 0;
-    text-align: right;
-}
-#header #quote blockquote p {
-    font-size: 15px;
-    margin: 0;
-}
-#header #top-menu {
-    float: left;
-    width: 100%;
-    background: #000;
-}
-#header #top-menu ul {
-    padding: 0 10px;
-}
-#header #top-menu ul li {
-    margin: 0 10px;
-    padding: 10px 0;
-    float: left;
-}
-#header #top-menu ul li a {
-    color: #FFF;
-    font-size: 15px;
-    font-weight: bold;
-    text-decoration: none;
-}
-#header #top-menu ul #rss {
-    float: right;
-}
+#header #title{margin:10px 0;padding:0}
+#header hr{border:2px solid #000;margin:0}
+#header #quote{margin:10px 0}
+#header #quote blockquote{border:0;margin:0;padding:25px 0 0;text-align:right}
+#header #quote blockquote p{font-size:15px;margin:0}
+#header #top-menu{background:#000;float:left;width:100%}
+#header #top-menu ul{padding:0 10px}
+#header #top-menu ul li{float:left;margin:0 10px;padding:10px 0}
+#header #top-menu ul li a{color:#FFF;font-size:15px;font-weight:700;text-decoration:none}
+#header #top-menu ul #rss{float:right}

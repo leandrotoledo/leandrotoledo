@@ -1,24 +1,5 @@
-#main #menu #search {
-    margin: 0;
-}
-#main #menu #search #query {
-    margin: 0;
-}
-#main #menu #search input[type="submit"] {
-    margin: 5px 0 0 0;
-}
-#main #menu ul li {
-    color: #999;
-    font-size: 13px;
-}
-#main #menu ul li a {
-    color: #555;
-    background: url('/static/images/icons.gif') no-repeat 6px -282px;
-    padding: 0 0 0 20px;
-    margin: 0 0 0 20px;
-    text-decoration: none;
-}
-#main #menu ul li a:hover {
-    color: #222;
-    background: url('/static/images/icons.gif') no-repeat -4px -262px;
-}
+#main #menu #search input[type=submit]{margin:5px 0 0}
+#main #menu ul li{color:#999;font-size:13px}
+#main #menu ul li a{background:url(/static/images/icons.gif) no-repeat 6px -282px;color:#555;margin:0 0 0 20px;padding:0 0 0 20px;text-decoration:none}
+#main #menu ul li a:hover{background:url(/static/images/icons.gif) no-repeat -4px -262px;color:#222}
+#main #menu #search,#main #menu #search #query{margin:0}

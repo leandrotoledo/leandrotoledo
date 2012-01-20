@@ -8,29 +8,9 @@
 @import url("https://fonts.googleapis.com/css?family=Ubuntu:regular,italic,bold&subset=Latin");
 @import url("https://fonts.googleapis.com/css?family=Ubuntu Mono:regular,bold&subset=Latin");
 
-* {
-    font-family: Ubuntu !important;
-}
-
-body {
-    background: url("/static/images/background.png");
-}
-ul {
-    margin: 0;
-}
-ul li {
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    background: #FFF;
-    margin: 10px auto;
-    padding: 5px;
-    border-radius: 15px;
-    box-shadow: 0 0 10px #666;
-}
-
-#main {
-    margin: 10px 10px;
-}
+*{font-family:Ubuntu!important}
+body{background:url(/static/images/background.png)}
+ul{margin:0}
+ul li{margin:0;padding:0}
+.container{background:#FFF;border-radius:15px;box-shadow:0 0 10px #666;margin:10px auto;padding:5px}
+#main{margin:10px}
