@@ -5,8 +5,8 @@
 @import url("menu.css");
 @import url("footer.css");
 @import url("badges.css");
-@import url("http://fonts.googleapis.com/css?family=Ubuntu:regular,italic,bold&subset=Latin");
-@import url("http://fonts.googleapis.com/css?family=Ubuntu Mono:regular,bold&subset=Latin");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:regular,italic,bold&subset=Latin");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu Mono:regular,bold&subset=Latin");
 
 * {
     font-family: Ubuntu !important;

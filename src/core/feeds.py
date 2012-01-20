@@ -3,7 +3,7 @@ from core.models import Post
 
 class PostsFeed(Feed):
 	title = 'Feed'
-	link = '/posts/'
+	link = '/'
 	description = 'posts'
 	
 	def items(self):
