@@ -1,10 +1,11 @@
 from django.contrib.syndication.views import Feed
+from django.contrib.sites.models import Site
 from core.models import Post
 
 class PostsFeed(Feed):
-	title = 'Feed'
+	title = Site.objects.get_current().name
 	link = '/'
-	description = 'posts'
+	description = Site.objects.get_current().sitedetail.description
 	
 	def items(self):
 		return Post.objects.filter(is_draft=False)
