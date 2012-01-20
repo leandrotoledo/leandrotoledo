@@ -4,6 +4,7 @@ from django.views.generic.dates import MonthArchiveView
 from django.contrib import admin
 from django.contrib.sitemaps import FlatPageSitemap, GenericSitemap
 
+from core.feeds import PostsFeed
 from core.models import Category, Post
 from core.sitemaps import PostsSitemap
 
@@ -16,6 +17,9 @@ urlpatterns = patterns('',
     url(r'^$',
         ListView.as_view(queryset=Post.objects.filter(is_draft=False), paginate_by=4),
         name='index'),
+        
+	(r'^feed/$',
+		PostsFeed()),
 
     (r'^posts/$',
         RedirectView.as_view(url='/')),

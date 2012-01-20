@@ -16,7 +16,6 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         with open(args[0]) as file:
             xml = minidom.parseString(file.read())
-            import pdb
 
             for row in xml.getElementsByTagName('row'):
                 post = Post()
@@ -30,6 +29,6 @@ class Command(BaseCommand):
 
                 print 'Post:', repr(post.title)
                 post.published_date = post.created_date
-                post.user = User.objects.get(username='leandro')
+                post.user = User.objects.get(username='leandrotoledo')
 
                 post.save()
