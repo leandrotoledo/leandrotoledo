@@ -62,4 +62,4 @@ class SiteDetail(models.Model):
 	site = models.OneToOneField(Site)
 	keywords = models.CharField(max_length=150)
 	description = models.CharField(max_length=150)
-	analytics_account_id = models.CharField(max_length=50)
+	#analytics_account_id = models.CharField(max_length=50)
