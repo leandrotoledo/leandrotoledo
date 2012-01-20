@@ -9,7 +9,7 @@
 @import url("https://fonts.googleapis.com/css?family=Ubuntu Mono:regular,bold&subset=Latin");
 
 *{font-family:Ubuntu!important}
-body{background:url(/static/images/background.png)}
+body{background:url(https://d12nqxoh5bw69p.cloudfront.net/static/images/background.png)}
 ul{margin:0}
 ul li{margin:0;padding:0}
 .container{background:#FFF;border-radius:15px;box-shadow:0 0 10px #666;margin:10px auto;padding:5px}
