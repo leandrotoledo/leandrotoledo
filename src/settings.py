@@ -141,6 +141,7 @@ INSTALLED_APPS = (
     'django.contrib.comments',
     'django.contrib.flatpages',
     'south',
+    'gunicorn',
     'core',
 )
 
