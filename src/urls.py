@@ -3,6 +3,7 @@ from django.views.generic import ListView, DetailView, RedirectView
 from django.views.generic.dates import MonthArchiveView
 from django.contrib import admin
 from django.contrib.sitemaps import FlatPageSitemap, GenericSitemap
+from django.conf import settings
 
 from core.feeds import PostsFeed
 from core.models import Category, Post
@@ -29,7 +30,7 @@ urlpatterns = patterns('',
 
     # TOFIX
     (r'^robots\.txt$',
-        RedirectView.as_view(url='/static/robots.txt')),
+        RedirectView.as_view(url=settings.STATIC_URL + 'robots.txt')),
 
     url(r'^posts/(?P<year>\d{4})/(?P<month>\d{1,2})/(?P<day>\d{1,2})/(?P<slug>[-\w]+)/$',
         DetailView.as_view(model=Post),
