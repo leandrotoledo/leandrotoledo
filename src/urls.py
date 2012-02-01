@@ -7,7 +7,7 @@ from django.conf import settings
 from core.views import *
 from core.feeds import PostsFeed
 from core.models import Category, Post
-from core.sitemaps import PostsSitemap
+from core.sitemaps import CategoriesSitemap, PostsSitemap
 
 admin.autodiscover()
 
@@ -22,6 +22,10 @@ urlpatterns = patterns('',
     url(r'^feed/$',
         PostsFeed(),
         name='feeds'),
+
+    url(r'^search/$',
+        PostSearch.as_view(),
+        name='search'),
 
     url(r'^categories/(?P<category>[-\w]+)/$',
         CategoriesListView.as_view(),
@@ -47,8 +51,9 @@ urlpatterns = patterns('',
 )
 
 sitemaps = {
+    'posts': PostsSitemap(),
     'flatpages': FlatPageSitemap,
-    'posts': PostsSitemap()
+    'categories': CategoriesSitemap()
 }
 
 urlpatterns += patterns('django.contrib.sitemaps.views',

@@ -1,5 +1,12 @@
 from django.contrib.sitemaps import Sitemap
-from core.models import Post
+from core.models import Category, Post
+
+class CategoriesSitemap(Sitemap):
+    changefreq = 'never'
+    priority = 0.3
+
+    def items(self):
+        return Category.objects.all()
 
 class PostsSitemap(Sitemap):
     changefreq = 'never'

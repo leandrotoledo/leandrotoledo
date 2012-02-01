@@ -3,6 +3,8 @@
 {% load comments %}
 {% load url from future %}
 
+{% block title %}{{ title|default:site.name }}{% endblock %}
+
 {% block articles %}
     {% if messages %}
         <ul class="messages">
@@ -34,7 +36,7 @@
                         <div itemprop="keywords">
                             <ul>
                             {% for category in post.category.all %}
-                                <li><a href="">{{ category }}</a></li>
+                                <li><a href="{{ category.get_absolute_url }}">{{ category }}</a></li>
                             {% endfor %}
                             </ul>
                         </div>

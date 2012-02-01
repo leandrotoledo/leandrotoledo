@@ -78,6 +78,20 @@ ul li{margin:0;padding:0}
 #main #menu ul li a:hover{background:url(https://d12nqxoh5bw69p.cloudfront.net/images/icons.gif) no-repeat -4px -262px;color:#222}
 #main #menu #search,#main #menu #search #query{margin:0}
 
+/* MESSAGES */
+.messages li {font-weight:bold;color:#444!important}
+.messages li em {font-weight:normal}
+.error, .alert, .notice, .success, .info {padding:10px;margin:0 20px 15px 0;border:2px solid #ddd}
+.error, .alert {background:#fbe3e4;color:#8a1f11;border-color:#fbc2c4;}
+.error {text-align:center}
+.notice {background:#fff6bf;color:#514721;border-color:#ffd324;}
+.success {background:#d5edf8;color:#205791;border-color:#92cae4;}
+.info {background:#e6efc2;color:#264409;border-color:#c6d880;}
+.error a, .alert a {color:#8a1f11;}
+.notice a {color:#514721;}
+.success a {color:#264409;}
+.info a {color:#205791;}
+
 /* FOOTER */
 #footer{border-top:4px solid #000}
 #footer #license{font-size:11px}
