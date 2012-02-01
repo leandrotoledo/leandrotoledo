@@ -6,7 +6,7 @@ class CategoriesSitemap(Sitemap):
     priority = 0.3
 
     def items(self):
-        return Category.objects.all(post__is_draft=False)
+        return Category.objects.filter(post__is_draft=False)
 
 class PostsSitemap(Sitemap):
     changefreq = 'never'
