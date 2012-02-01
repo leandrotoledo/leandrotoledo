@@ -16,7 +16,7 @@
 {% block articles %}
     <article class="article detail">
         <header>
-            <h2 class="title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+            <h2 class="title {% if post.is_draft %}draft{% endif %}"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
              <ul>
                 <li class="published-date">por <a rel="author" href="https://profiles.google.com/{{ author.userprofile.google_profile }}/" target="_blank">{{ author.first_name }} {{ author.last_name }}</a> em <time datetime="{{ post.published_date|date:'Y-m-d' }}">{{ post.published_date|date:'d/m/Y' }}</time></li>
                 <li class="keywords">Categoria(s):
