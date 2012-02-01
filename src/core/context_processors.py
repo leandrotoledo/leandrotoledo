@@ -13,4 +13,4 @@ def archives(request):
     return {'archives': Post.objects.filter(is_draft=False).dates('published_date', 'month')}
 
 def categories(request):
-    return {'categories': Category.objects.annotate(Count('post')).order_by('title')}
+    return {'categories': Category.objects.filter(post__is_draft=False).annotate(Count('post')).order_by('title')}
