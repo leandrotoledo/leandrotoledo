@@ -88,11 +88,11 @@
 
                         <span class="step-links">
                             {% if page_obj.has_next %}
-                                <a class="next" href="?page={{ page_obj.next_page_number }}">← Posts mais antigos</a>
+                                <a class="next" href="?page={{ page_obj.next_page_number }}{% if q %}&q={{ q }}{% endif %}">← Posts mais antigos</a>
                             {% endif %}
 
                             {% if page_obj.has_previous %}
-                                <a class="previous" href="?page={{ page_obj.previous_page_number }}">Posts mais recentes →</a>
+                                <a class="previous" href="?page={{ page_obj.previous_page_number }}{% if q %}&q={{ q }}{% endif %}">Posts mais recentes →</a>
                             {% endif %}
                         </span>
                     </div>

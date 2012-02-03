@@ -27,6 +27,7 @@ class PostSearch(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(PostSearch, self).get_context_data(**kwargs)
+        context['q'] = self.request.GET.get('q', False)
         context['title'] = 'Busca: %s' % self.request.GET.get('q', False)
 
         return context
