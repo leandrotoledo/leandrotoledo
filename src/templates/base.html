@@ -18,7 +18,7 @@
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/skeleton/base.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}/stylesheets/skeleton/base.css">
     <link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/skeleton/skeleton.css">
     <link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/skeleton/layout.css">
     <link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/layout-default/layout.css">
@@ -68,11 +68,12 @@
             <nav id="top-menu">
                 <ul>
                     <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'contact' %}">Contato</a></li>
                     {% get_flatpages as flatpages %}
                     {% for page in flatpages %}
                         <li><a href="{{ page.url }}">{{ page.title }}</a></li>
                     {% endfor %}
-                    <li id="rss"><a href="https://{{ site }}/feed">RSS</a></li>
+                    <li id="rss"><a href="{% url 'feeds' %}">RSS</a></li>
                 </ul>
             </nav>
         </header>
@@ -80,6 +81,13 @@
         <div id="main" class="sixteen columns clearfix row">
             <div id="articles" class="twelve columns alpha">
                 {% block articles %}
+                    {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message|safe|escape }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
                 {% endblock %}
 
                 {% if is_paginated %}

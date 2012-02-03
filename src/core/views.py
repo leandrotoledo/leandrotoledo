@@ -1,11 +1,12 @@
 from django.db.models import Q
 from django.contrib import messages
-from django.views.generic import ListView, DetailView, RedirectView
+from django.views.generic import ListView, DetailView, FormView, TemplateView
 from django.views.generic.dates import MonthArchiveView
 
 import calendar
 
 from core.models import Category, Post
+from core.forms import ContactForm
 
 class PostSearch(ListView):
     queryset = Post.objects.none()
@@ -81,3 +82,11 @@ class CategoriesListView(ListView):
         messages.info(self.request, 'Arquivos da Categoria: <em>%s</em>' % category)
 
         return context
+
+class Contact(FormView):
+    form_class = ContactForm
+    success_url = '/pages/contact/thanks'
+    template_name = 'core/contact.html'
+
+class ContactThanks(TemplateView):
+    template_name = 'core/contact_thanks.html'

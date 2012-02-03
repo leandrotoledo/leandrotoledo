@@ -6,14 +6,6 @@
 {% block title %}{{ title|default:site.name }}{% endblock %}
 
 {% block articles %}
-    {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message|safe|escape }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-
     {% for post in object_list %}
         <article class="article" itemscope itemtype="http://schema.org/BlogPosting">
             <header>

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% load comments %}
+{% load url from future %}
+
+{% block title %}{{ title|default:site.name }}{% endblock %}
+
+{% block articles %}
+    <h1>Obrigado!</h1>
+{% endblock %}
