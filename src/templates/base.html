@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/layout-default/layout.css">
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} Feed" href="https://{{ site }}/feed/" />
 
+    {% if site.sitedetail %}
     <script type="text/javascript">
         window.___gcfg = {lang: 'pt-BR'};
 
@@ -47,9 +48,10 @@
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
     </script>
+    {% endif %}
 </head>
 <body>
-    {% spaceless %}
+{% spaceless %}
     <div class="container">
         <header id="header" class="sixteen columns clearfix">
             <h1 id="title">{{ site.name }}</h1>
@@ -155,6 +157,6 @@
         <a href=""><img src="{{ STATIC_URL }}images/badges/valid-ipv6.png" alt="Tecnologia usada válida para IPv6" /></a>
         <a href=""><img src="{{ STATIC_URL }}images/badges/valid-dnssec.png" alt="Tecnologia usada válida para DNSSEC" /></a>
     </aside>
-    {% endspaceless %}
+{% endspaceless %}
 </body>
 </html>
