@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/skeleton/skeleton.css">
     <link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/skeleton/layout.css">
     <link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/layout-default/style.css">
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} Feed" href="https://{{ site }}/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} Feed" href="http://{{ site }}/feed/" />
 
     <script type="text/javascript">
         window.___gcfg = {lang: 'pt-BR'};
@@ -151,12 +151,11 @@
     </div>
 
     <aside id="badges">
-        TESTE
-        <a id="badge-css3" href="" alt="Tecnologia usada válida para CSS3"></a>
-        <a id="badge-html5" href="" alt="Tecnologia usada válida para HTML5"></a>
-        <a id="badge-rss20" href="" alt="Tecnologia usada válida para RSS 2.0"></a>
-        <a id="badge-ipv6" href="" alt="Tecnologia usada válida para IPv6"></a>
-        <a id="badge-dnssec" href="" alt="Tecnologia usada válida para DNSSEC"></a>
+        <a id="badge-css3" href="http://jigsaw.w3.org/css-validator/validator?uri={{ site }}&profile=css3" alt="Tecnologia usada válida para CSS3"></a>
+        <a id="badge-html5" href="http://html5.validator.nu/?doc={{ site }}" alt="Tecnologia usada válida para HTML5"></a>
+        <a id="badge-rss20" href="http://validator.w3.org/feed/check.cgi?url={{ site }}/feed/" alt="Tecnologia usada válida para RSS 2.0"></a>
+        <a id="badge-ipv6" href="http://validador.ipv6.br/index.php?site={{ site }}" alt="Tecnologia usada válida para IPv6"></a>
+        <a id="badge-dnssec" href="http://registro.br/cgi-bin/nicbr/dscheck" alt="Tecnologia usada válida para DNSSEC"></a>
     </aside>
 {% endspaceless %}
 </body>

@@ -106,8 +106,8 @@ ul li{margin:0;padding:0}
 #footer #license #creative-commons-license{float:left;margin:2px 4px 0 0}
 
 /* BADGES */
-#badges{float: left;margin:0 auto}
-#badges a{display:block;box-shadow:0 0 1px 1px #AAA;width:80px;height:15px;margin:0 2px}
+#badges{width:420px;margin:0 auto}
+#badges a{float:left;width:80px;height:15px;margin:0 2px}
 #badge-css3{background:url(/static/images/badges.png) no-repeat 0 0}
 #badge-html5{background:url(/static/images/badges.png) no-repeat 0 -15px}
 #badge-dnssec{background:url(/static/images/badges.png) no-repeat 0 -30px}
