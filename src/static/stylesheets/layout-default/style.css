@@ -107,7 +107,7 @@ ul li{margin:0;padding:0}
 
 /* BADGES */
 #badges{width:420px;margin:0 auto}
-#badges a{float:left;width:80px;height:15px;margin:0 2px}
+#badges a{float:left;width:80px;height:15px;margin:0 2px 10px 2px}
 #badge-css3{background:url(/static/images/badges.png) no-repeat 0 0}
 #badge-html5{background:url(/static/images/badges.png) no-repeat 0 -15px}
 #badge-dnssec{background:url(/static/images/badges.png) no-repeat 0 -30px}
