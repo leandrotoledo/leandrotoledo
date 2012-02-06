@@ -24,7 +24,6 @@
     <link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/layout-default/layout.css">
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} Feed" href="https://{{ site }}/feed/" />
 
-    {% if site.sitedetail %}
     <script type="text/javascript">
         window.___gcfg = {lang: 'pt-BR'};
 
@@ -35,6 +34,7 @@
         })();
     </script>
 
+    {% if site.sitedetail %}
     <script type="text/javascript">
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', '{{ site.sitedetail.analytics_account_id }}']);
