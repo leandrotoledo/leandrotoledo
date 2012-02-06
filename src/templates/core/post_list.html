@@ -7,7 +7,7 @@
 
 {% block articles %}
     {% for post in object_list %}
-        <article class="article" itemscope itemtype="http://schema.org/BlogPosting">
+        <article itemscope itemtype="http://schema.org/BlogPosting">
             <header>
                 <h2 class="title {% if post.is_draft %}draft{% endif %}"><a href="{{ post.get_absolute_url }}"><span itemprop="name">{{ post.title }}</span></a></h2>
                  <ul>

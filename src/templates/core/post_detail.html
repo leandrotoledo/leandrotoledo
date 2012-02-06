@@ -14,7 +14,7 @@
 {% endblock %}
 
 {% block articles %}
-    <article class="article detail">
+    <article class="detail">
         <header>
             <h2 class="title {% if post.is_draft %}draft{% endif %}"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
              <ul>
