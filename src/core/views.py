@@ -1,5 +1,6 @@
 from django.db.models import Q
 from django.contrib import messages
+from django.core.mail import send_mail
 from django.views.generic import ListView, DetailView, FormView, TemplateView
 from django.views.generic.dates import MonthArchiveView
 
@@ -87,6 +88,10 @@ class Contact(FormView):
     form_class = ContactForm
     success_url = '/pages/contact/thanks'
     template_name = 'core/contact.html'
+
+    def form_valid(self, form):
+        data = form.cleaned_data
+        send_mail('Contato: %s' % data[name], data[message], 'leandrotoledo@members.fsf.org', [data[sender]], fail_silenty=False)
 
 class ContactThanks(TemplateView):
     template_name = 'core/contact_thanks.html'
