@@ -91,7 +91,7 @@ class Contact(FormView):
 
     def form_valid(self, form):
         data = form.cleaned_data
-        send_mail('Contato: %s' % data['name'], data['message'], 'leandrotoledo@members.fsf.org', [data['sender']], fail_silenty=False)
+        send_mail('Contato: %s' % data['name'], data['message'], 'leandrotoledo@members.fsf.org', [data['sender']], fail_silently=False)
 
 class ContactThanks(TemplateView):
     template_name = 'core/contact_thanks.html'
