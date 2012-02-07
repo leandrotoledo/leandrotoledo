@@ -62,6 +62,7 @@ ul li{margin:0;padding:0}
 
 /* CONTACT */
 #contact h1 {padding:0 20px;border-bottom:1px solid #DDDDDD; font-size:22px}
+#contact p {margin:10px 0 0;padding:0 20px}
 #contact form {margin:10px 0 0;padding:0 20px}
 #contact form label{color:#666;font-weight:400}
 #contact form input[type=text]{width:50%}

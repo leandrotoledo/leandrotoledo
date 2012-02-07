@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
-{% load comments %}
-{% load url from future %}
-
 {% block title %}{{ title|default:site.name }}{% endblock %}
 
 {% block articles %}
-    <h1>Obrigado!</h1>
+    <article id="contact">
+        <h1 class="title">Obrigado!</h1>
+        <p>Seu formulário foi enviado com sucesso.</p>
+    </article>
 {% endblock %}

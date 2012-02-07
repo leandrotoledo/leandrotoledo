@@ -91,9 +91,21 @@ class Contact(FormView):
 
     def form_valid(self, form):
         data = form.cleaned_data
-        send_mail('Contato: %s' % data['name'], data['message'], 'leandrotoledo@members.fsf.org', [data['sender']], fail_silently=False)
+        send_mail('Contato: %s' % data['name'], data['message'], 'leandrotoledo@members.fsf.org', [data['sender']], fail_silently=True)
 
         return super(Contact, self).form_valid(form)
 
+    def get_context_data(self, **kwargs):
+        context = super(Contact, self).get_context_data(**kwargs)
+        context['title'] = 'Contato'
+
+        return context
+
 class ContactThanks(TemplateView):
     template_name = 'core/contact_thanks.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(ContactThanks, self).get_context_data(**kwargs)
+        context['title'] = 'Contato: Obrigado'
+
+        return context
