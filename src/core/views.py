@@ -1,11 +1,13 @@
 from django.db.models import Q
 from django.contrib import messages
-from django.views.generic import ListView, DetailView, RedirectView
+from django.core.mail import send_mail
+from django.views.generic import ListView, DetailView, FormView, TemplateView
 from django.views.generic.dates import MonthArchiveView
 
 import calendar
 
 from core.models import Category, Post
+from core.forms import ContactForm
 
 class PostSearch(ListView):
     queryset = Post.objects.none()
@@ -27,6 +29,7 @@ class PostSearch(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(PostSearch, self).get_context_data(**kwargs)
+        context['q'] = self.request.GET.get('q', False)
         context['title'] = 'Busca: %s' % self.request.GET.get('q', False)
 
         return context
@@ -78,5 +81,31 @@ class CategoriesListView(ListView):
         context = super(CategoriesListView, self).get_context_data(**kwargs)
         context['title'] = category
         messages.info(self.request, 'Arquivos da Categoria: <em>%s</em>' % category)
+
+        return context
+
+class Contact(FormView):
+    form_class = ContactForm
+    success_url = '/pages/contact/thanks'
+    template_name = 'core/contact.html'
+
+    def form_valid(self, form):
+        data = form.cleaned_data
+        send_mail('Contato: %s' % data['name'], data['message'], 'leandrotoledo@members.fsf.org', [data['sender']], fail_silently=True)
+
+        return super(Contact, self).form_valid(form)
+
+    def get_context_data(self, **kwargs):
+        context = super(Contact, self).get_context_data(**kwargs)
+        context['title'] = 'Contato'
+
+        return context
+
+class ContactThanks(TemplateView):
+    template_name = 'core/contact_thanks.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(ContactThanks, self).get_context_data(**kwargs)
+        context['title'] = 'Contato: Obrigado'
 
         return context

@@ -27,6 +27,13 @@ urlpatterns = patterns('',
         PostSearch.as_view(),
         name='search'),
 
+    url(r'^pages/contact/$',
+        Contact.as_view(),
+        name='contact'),
+
+    url(r'^pages/contact/thanks/$',
+        ContactThanks.as_view()),
+
     url(r'^categories/(?P<category>[-\w]+)/$',
         CategoriesListView.as_view(),
         name='category'),
