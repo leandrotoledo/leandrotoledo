@@ -4,5 +4,5 @@ from django import forms
 class ContactForm(forms.Form):
     name = forms.CharField(label='Nome:', max_length=100)
     sender = forms.EmailField(label='Endereço de e-mail:')
-    site = forms.URLField(label='URL:')
+    site = forms.URLField(label='URL:', required=False)
     message = forms.CharField(label='Mensagem:', widget=forms.Textarea)

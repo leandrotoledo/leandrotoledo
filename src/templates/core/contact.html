@@ -1,12 +1,9 @@
 {% extends 'base.html' %}
 
-{% load comments %}
-{% load url from future %}
-
-{% block title %}{{ 'Contato'|default:site.name }}{% endblock %}
+{% block title %}{{ title|default:site.name }}{% endblock %}
 
 {% block articles %}
-    <article id="contact" class="article">
+    <article id="contact">
         <h1 class="title">Contato</h1>
         <form action="/pages/contact/" method="POST">
             {% csrf_token %}
