@@ -49,9 +49,10 @@ ul li{margin:0;padding:0}
 #comments .comments-anchor{border-bottom:1px solid #DDD;font-size:22px;padding:0 0 0 20px}
 #comments .comments-anchor a{color:#181818!important}
 #comments .published-date a,ul li{color:#888!important}
-#comments article{background:#EEE url(/static/images/blockquote.png) no-repeat;border-radius:10px;padding:10px 20px 10px 60px}
-#comments .username{border-bottom:4px solid #FFF;padding:4px 10px}
-#comments .username a{color:#444!important;font-weight:700;text-transform:uppercase}
+#comments .published-date{background:none!important;text-align:right}
+#comments article{background:#EEE url(/static/images/blockquote.png) no-repeat;border-radius:10px;padding:15px 15px 15px 70px!important;margin:0!important}
+#comments .username{border-bottom:4px solid #FFF;padding:4px 0px;text-transform:uppercase}
+#comments .username a{color:#444!important;font-weight:700}
 #comments .content{text-align:justify}
 #comments form,article{margin:0;padding:0 20px}
 #comments form label{color:#666;font-weight:400}
@@ -62,7 +63,7 @@ ul li{margin:0;padding:0}
 
 /* CONTACT */
 #contact h1 {padding:0 20px;border-bottom:1px solid #DDDDDD; font-size:22px}
-#contact p {margin:10px 0;padding:0 20px}
+#contact p {margin:10px 0 0}
 #contact form {margin:10px 0 0;padding:0 20px}
 #contact form label{color:#666;font-weight:400}
 #contact form input[type=text]{width:50%}

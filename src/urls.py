@@ -52,7 +52,7 @@ urlpatterns = patterns('',
     (r'^categories/$',
         RedirectView.as_view(url='/')),
 
-    # TOFIX
+    # TOFIX 
     (r'^robots\.txt$',
         RedirectView.as_view(url=settings.STATIC_URL + 'robots.txt')),
 )
